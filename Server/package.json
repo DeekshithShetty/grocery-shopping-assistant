@@ -1,0 +1,13 @@
+{
+    "name": "Node-Android",
+    "version": "0.0.1",
+    "main": "app.js",
+    "dependencies": {
+        "express" : "~4.0.0",
+        "connect": "~2.14.4",
+        "body-parser": "~1.13.2",
+        "cookie-parser": "~1.3.5",
+        "morgan": "~1.6.0",
+        "multer" : "~0.1.8"
+  }
+}

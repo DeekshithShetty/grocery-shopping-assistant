@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/deekshith/Desktop/OpenCV/NFT/main.cpp" "/home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/NFT.dir/main.cpp.o"
+  "/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/main.cpp" "/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/NFT.dir/main.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

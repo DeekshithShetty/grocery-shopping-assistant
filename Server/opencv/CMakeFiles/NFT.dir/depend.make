@@ -47,6 +47,9 @@ CMakeFiles/NFT.dir/main.cpp.o: /usr/local/include/opencv2/objdetect/objdetect_c.
 CMakeFiles/NFT.dir/main.cpp.o: /usr/local/include/opencv2/opencv.hpp
 CMakeFiles/NFT.dir/main.cpp.o: /usr/local/include/opencv2/photo.hpp
 CMakeFiles/NFT.dir/main.cpp.o: /usr/local/include/opencv2/photo/photo_c.h
+CMakeFiles/NFT.dir/main.cpp.o: /usr/local/include/opencv2/text.hpp
+CMakeFiles/NFT.dir/main.cpp.o: /usr/local/include/opencv2/text/erfilter.hpp
+CMakeFiles/NFT.dir/main.cpp.o: /usr/local/include/opencv2/text/ocr.hpp
 CMakeFiles/NFT.dir/main.cpp.o: /usr/local/include/opencv2/video.hpp
 CMakeFiles/NFT.dir/main.cpp.o: /usr/local/include/opencv2/video/background_segm.hpp
 CMakeFiles/NFT.dir/main.cpp.o: /usr/local/include/opencv2/video/tracking.hpp

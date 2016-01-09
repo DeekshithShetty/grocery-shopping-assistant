@@ -50,10 +50,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/deekshith/Desktop/OpenCV/NFT
+CMAKE_SOURCE_DIR = /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/deekshith/Desktop/OpenCV/NFT
+CMAKE_BINARY_DIR = /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv
 
 #=============================================================================
 # Target rules for target CMakeFiles/NFT.dir
@@ -62,7 +62,7 @@ CMAKE_BINARY_DIR = /home/deekshith/Desktop/OpenCV/NFT
 CMakeFiles/NFT.dir/all:
 	$(MAKE) -f CMakeFiles/NFT.dir/build.make CMakeFiles/NFT.dir/depend
 	$(MAKE) -f CMakeFiles/NFT.dir/build.make CMakeFiles/NFT.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles  1
 	@echo "Built target NFT"
 .PHONY : CMakeFiles/NFT.dir/all
 
@@ -72,9 +72,9 @@ all: CMakeFiles/NFT.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/NFT.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/NFT.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles 0
 .PHONY : CMakeFiles/NFT.dir/rule
 
 # Convenience name for target.

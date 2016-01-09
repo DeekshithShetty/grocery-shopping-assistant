@@ -38,10 +38,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/deekshith/Desktop/OpenCV/NFT
+CMAKE_SOURCE_DIR = /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/deekshith/Desktop/OpenCV/NFT
+CMAKE_BINARY_DIR = /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv
 
 # Include any dependencies generated for this target.
 include CMakeFiles/NFT.dir/depend.make
@@ -54,17 +54,17 @@ include CMakeFiles/NFT.dir/flags.make
 
 CMakeFiles/NFT.dir/main.cpp.o: CMakeFiles/NFT.dir/flags.make
 CMakeFiles/NFT.dir/main.cpp.o: main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/NFT.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/NFT.dir/main.cpp.o -c /home/deekshith/Desktop/OpenCV/NFT/main.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/NFT.dir/main.cpp.o -c /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/main.cpp
 
 CMakeFiles/NFT.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NFT.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/deekshith/Desktop/OpenCV/NFT/main.cpp > CMakeFiles/NFT.dir/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/main.cpp > CMakeFiles/NFT.dir/main.cpp.i
 
 CMakeFiles/NFT.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NFT.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/deekshith/Desktop/OpenCV/NFT/main.cpp -o CMakeFiles/NFT.dir/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/main.cpp -o CMakeFiles/NFT.dir/main.cpp.s
 
 CMakeFiles/NFT.dir/main.cpp.o.requires:
 .PHONY : CMakeFiles/NFT.dir/main.cpp.o.requires
@@ -157,6 +157,6 @@ CMakeFiles/NFT.dir/clean:
 .PHONY : CMakeFiles/NFT.dir/clean
 
 CMakeFiles/NFT.dir/depend:
-	cd /home/deekshith/Desktop/OpenCV/NFT && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/deekshith/Desktop/OpenCV/NFT /home/deekshith/Desktop/OpenCV/NFT /home/deekshith/Desktop/OpenCV/NFT /home/deekshith/Desktop/OpenCV/NFT /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/NFT.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/NFT.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/NFT.dir/depend
 

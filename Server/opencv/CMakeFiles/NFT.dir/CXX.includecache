@@ -6,10 +6,16 @@
 
 #IncludeRegexTransform: 
 
-/home/deekshith/Desktop/OpenCV/NFT/main.cpp
+/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/main.cpp
 iostream
 -
+opencv2/text.hpp
+/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/opencv2/text.hpp
 opencv2/opencv.hpp
+-
+tesseract/baseapi.h
+-
+tesseract/strngs.h
 -
 
 /usr/local/include/opencv/cxcore.h
@@ -425,6 +431,28 @@ opencv2/photo/photo_c.h
 /usr/local/include/opencv2/photo/photo_c.h
 opencv2/core/core_c.h
 /usr/local/include/opencv2/photo/opencv2/core/core_c.h
+
+/usr/local/include/opencv2/text.hpp
+opencv2/text/erfilter.hpp
+/usr/local/include/opencv2/opencv2/text/erfilter.hpp
+opencv2/text/ocr.hpp
+/usr/local/include/opencv2/opencv2/text/ocr.hpp
+
+/usr/local/include/opencv2/text/erfilter.hpp
+opencv2/core.hpp
+/usr/local/include/opencv2/text/opencv2/core.hpp
+vector
+-
+deque
+-
+string
+-
+
+/usr/local/include/opencv2/text/ocr.hpp
+vector
+-
+string
+-
 
 /usr/local/include/opencv2/video.hpp
 opencv2/video/tracking.hpp

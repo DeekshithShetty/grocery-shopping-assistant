@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/2.8.12.2/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/2.8.12.2/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,35 +23,35 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/2.8.12.2/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/2.8.12.2/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp
+Change Dir: /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec115917496/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec115917496.dir/build.make CMakeFiles/cmTryCompileExec115917496.dir/build
-make[1]: Entering directory `/home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec115917496.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec115917496.dir/testCCompiler.c.o   -c /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTryCompileExec115917496
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec115917496.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec115917496.dir/testCCompiler.c.o  -o cmTryCompileExec115917496 -rdynamic 
-make[1]: Leaving directory `/home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp'
+Run Build Command:/usr/bin/make "cmTryCompileExec434882160/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec434882160.dir/build.make CMakeFiles/cmTryCompileExec434882160.dir/build
+make[1]: Entering directory `/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec434882160.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec434882160.dir/testCCompiler.c.o   -c /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec434882160
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec434882160.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec434882160.dir/testCCompiler.c.o  -o cmTryCompileExec434882160 -rdynamic 
+make[1]: Leaving directory `/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp
+Change Dir: /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1739965303/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1739965303.dir/build.make CMakeFiles/cmTryCompileExec1739965303.dir/build
-make[1]: Entering directory `/home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1739965303.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1739965303.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
-Linking C executable cmTryCompileExec1739965303
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1739965303.dir/link.txt --verbose=1
-/usr/bin/cc     -v CMakeFiles/cmTryCompileExec1739965303.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec1739965303 -rdynamic  
+Run Build Command:/usr/bin/make "cmTryCompileExec3823184488/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3823184488.dir/build.make CMakeFiles/cmTryCompileExec3823184488.dir/build
+make[1]: Entering directory `/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3823184488.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3823184488.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec3823184488
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3823184488.dir/link.txt --verbose=1
+/usr/bin/cc     -v CMakeFiles/cmTryCompileExec3823184488.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3823184488 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/i686-linux-gnu/4.9/lto-wrapper
@@ -61,24 +61,24 @@ Thread model: posix
 gcc version 4.9.1 (Ubuntu 4.9.1-16ubuntu6) 
 COMPILER_PATH=/usr/lib/gcc/i686-linux-gnu/4.9/:/usr/lib/gcc/i686-linux-gnu/4.9/:/usr/lib/gcc/i686-linux-gnu/:/usr/lib/gcc/i686-linux-gnu/4.9/:/usr/lib/gcc/i686-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/i686-linux-gnu/4.9/:/usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/:/usr/lib/gcc/i686-linux-gnu/4.9/../../../../lib/:/lib/i386-linux-gnu/:/lib/../lib/:/usr/lib/i386-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/i686-linux-gnu/4.9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1739965303' '-rdynamic' '-mtune=generic' '-march=i686'
- /usr/lib/gcc/i686-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/i686-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/i686-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdGRScD.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_i386 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib/ld-linux.so.2 -z relro -o cmTryCompileExec1739965303 /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crt1.o /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crti.o /usr/lib/gcc/i686-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/i686-linux-gnu/4.9 -L/usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu -L/usr/lib/gcc/i686-linux-gnu/4.9/../../../../lib -L/lib/i386-linux-gnu -L/lib/../lib -L/usr/lib/i386-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/i686-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec1739965303.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/i686-linux-gnu/4.9/crtend.o /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crtn.o
-make[1]: Leaving directory `/home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3823184488' '-rdynamic' '-mtune=generic' '-march=i686'
+ /usr/lib/gcc/i686-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/i686-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/i686-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0kgD8D.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_i386 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib/ld-linux.so.2 -z relro -o cmTryCompileExec3823184488 /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crt1.o /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crti.o /usr/lib/gcc/i686-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/i686-linux-gnu/4.9 -L/usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu -L/usr/lib/gcc/i686-linux-gnu/4.9/../../../../lib -L/lib/i386-linux-gnu -L/lib/../lib -L/usr/lib/i386-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/i686-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec3823184488.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/i686-linux-gnu/4.9/crtend.o /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crtn.o
+make[1]: Leaving directory `/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec1739965303/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec1739965303.dir/build.make CMakeFiles/cmTryCompileExec1739965303.dir/build]
-  ignore line: [make[1]: Entering directory `/home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp']
-  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building C object CMakeFiles/cmTryCompileExec1739965303.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1739965303.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTryCompileExec1739965303]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1739965303.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTryCompileExec1739965303.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec1739965303 -rdynamic  ]
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec3823184488/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec3823184488.dir/build.make CMakeFiles/cmTryCompileExec3823184488.dir/build]
+  ignore line: [make[1]: Entering directory `/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec3823184488.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3823184488.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec3823184488]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3823184488.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTryCompileExec3823184488.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3823184488 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/i686-linux-gnu/4.9/lto-wrapper]
@@ -88,13 +88,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 4.9.1 (Ubuntu 4.9.1-16ubuntu6) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/i686-linux-gnu/4.9/:/usr/lib/gcc/i686-linux-gnu/4.9/:/usr/lib/gcc/i686-linux-gnu/:/usr/lib/gcc/i686-linux-gnu/4.9/:/usr/lib/gcc/i686-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/i686-linux-gnu/4.9/:/usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/:/usr/lib/gcc/i686-linux-gnu/4.9/../../../../lib/:/lib/i386-linux-gnu/:/lib/../lib/:/usr/lib/i386-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/i686-linux-gnu/4.9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1739965303' '-rdynamic' '-mtune=generic' '-march=i686']
-  link line: [ /usr/lib/gcc/i686-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/i686-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/i686-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdGRScD.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_i386 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib/ld-linux.so.2 -z relro -o cmTryCompileExec1739965303 /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crt1.o /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crti.o /usr/lib/gcc/i686-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/i686-linux-gnu/4.9 -L/usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu -L/usr/lib/gcc/i686-linux-gnu/4.9/../../../../lib -L/lib/i386-linux-gnu -L/lib/../lib -L/usr/lib/i386-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/i686-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec1739965303.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/i686-linux-gnu/4.9/crtend.o /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3823184488' '-rdynamic' '-mtune=generic' '-march=i686']
+  link line: [ /usr/lib/gcc/i686-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/i686-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/i686-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0kgD8D.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_i386 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib/ld-linux.so.2 -z relro -o cmTryCompileExec3823184488 /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crt1.o /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crti.o /usr/lib/gcc/i686-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/i686-linux-gnu/4.9 -L/usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu -L/usr/lib/gcc/i686-linux-gnu/4.9/../../../../lib -L/lib/i386-linux-gnu -L/lib/../lib -L/usr/lib/i386-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/i686-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec3823184488.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/i686-linux-gnu/4.9/crtend.o /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/i686-linux-gnu/4.9/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/i686-linux-gnu/4.9/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/i686-linux-gnu/4.9/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccdGRScD.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc0kgD8D.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -112,7 +112,7 @@ Parsed C implicit link information from above output:
     arg [/lib/ld-linux.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec1739965303] ==> ignore
+    arg [cmTryCompileExec3823184488] ==> ignore
     arg [/usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/i686-linux-gnu/4.9/crtbegin.o] ==> ignore
@@ -124,7 +124,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/i386-linux-gnu] ==> dir [/usr/lib/i386-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/i686-linux-gnu/4.9/../../..] ==> dir [/usr/lib/gcc/i686-linux-gnu/4.9/../../..]
-    arg [CMakeFiles/cmTryCompileExec1739965303.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec3823184488.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -154,32 +154,32 @@ Parsed C implicit link information from above output:
 
 
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp
+Change Dir: /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec817910425/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec817910425.dir/build.make CMakeFiles/cmTryCompileExec817910425.dir/build
-make[1]: Entering directory `/home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec817910425.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTryCompileExec817910425.dir/testCXXCompiler.cxx.o -c /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTryCompileExec817910425
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec817910425.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTryCompileExec817910425.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec817910425 -rdynamic 
-make[1]: Leaving directory `/home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp'
+Run Build Command:/usr/bin/make "cmTryCompileExec1906783420/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1906783420.dir/build.make CMakeFiles/cmTryCompileExec1906783420.dir/build
+make[1]: Entering directory `/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1906783420.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec1906783420.dir/testCXXCompiler.cxx.o -c /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec1906783420
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1906783420.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTryCompileExec1906783420.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec1906783420 -rdynamic 
+make[1]: Leaving directory `/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp
+Change Dir: /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1358388877/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1358388877.dir/build.make CMakeFiles/cmTryCompileExec1358388877.dir/build
-make[1]: Entering directory `/home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec1358388877.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTryCompileExec1358388877.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTryCompileExec1358388877
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1358388877.dir/link.txt --verbose=1
-/usr/bin/c++      -v CMakeFiles/cmTryCompileExec1358388877.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1358388877 -rdynamic  
+Run Build Command:/usr/bin/make "cmTryCompileExec2403954646/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2403954646.dir/build.make CMakeFiles/cmTryCompileExec2403954646.dir/build
+make[1]: Entering directory `/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2403954646.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2403954646.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec2403954646
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2403954646.dir/link.txt --verbose=1
+/usr/bin/c++      -v CMakeFiles/cmTryCompileExec2403954646.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec2403954646 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/i686-linux-gnu/4.9/lto-wrapper
@@ -189,24 +189,24 @@ Thread model: posix
 gcc version 4.9.1 (Ubuntu 4.9.1-16ubuntu6) 
 COMPILER_PATH=/usr/lib/gcc/i686-linux-gnu/4.9/:/usr/lib/gcc/i686-linux-gnu/4.9/:/usr/lib/gcc/i686-linux-gnu/:/usr/lib/gcc/i686-linux-gnu/4.9/:/usr/lib/gcc/i686-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/i686-linux-gnu/4.9/:/usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/:/usr/lib/gcc/i686-linux-gnu/4.9/../../../../lib/:/lib/i386-linux-gnu/:/lib/../lib/:/usr/lib/i386-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/i686-linux-gnu/4.9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1358388877' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=i686'
- /usr/lib/gcc/i686-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/i686-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/i686-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJs7EbY.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_i386 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib/ld-linux.so.2 -z relro -o cmTryCompileExec1358388877 /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crt1.o /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crti.o /usr/lib/gcc/i686-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/i686-linux-gnu/4.9 -L/usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu -L/usr/lib/gcc/i686-linux-gnu/4.9/../../../../lib -L/lib/i386-linux-gnu -L/lib/../lib -L/usr/lib/i386-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/i686-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec1358388877.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/i686-linux-gnu/4.9/crtend.o /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crtn.o
-make[1]: Leaving directory `/home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2403954646' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=i686'
+ /usr/lib/gcc/i686-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/i686-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/i686-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccIm1vOR.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_i386 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib/ld-linux.so.2 -z relro -o cmTryCompileExec2403954646 /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crt1.o /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crti.o /usr/lib/gcc/i686-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/i686-linux-gnu/4.9 -L/usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu -L/usr/lib/gcc/i686-linux-gnu/4.9/../../../../lib -L/lib/i386-linux-gnu -L/lib/../lib -L/usr/lib/i386-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/i686-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec2403954646.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/i686-linux-gnu/4.9/crtend.o /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crtn.o
+make[1]: Leaving directory `/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec1358388877/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec1358388877.dir/build.make CMakeFiles/cmTryCompileExec1358388877.dir/build]
-  ignore line: [make[1]: Entering directory `/home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp']
-  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec1358388877.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec1358388877.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTryCompileExec1358388877]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1358388877.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTryCompileExec1358388877.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1358388877 -rdynamic  ]
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec2403954646/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec2403954646.dir/build.make CMakeFiles/cmTryCompileExec2403954646.dir/build]
+  ignore line: [make[1]: Entering directory `/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec2403954646.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2403954646.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec2403954646]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2403954646.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTryCompileExec2403954646.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec2403954646 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/i686-linux-gnu/4.9/lto-wrapper]
@@ -216,13 +216,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 4.9.1 (Ubuntu 4.9.1-16ubuntu6) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/i686-linux-gnu/4.9/:/usr/lib/gcc/i686-linux-gnu/4.9/:/usr/lib/gcc/i686-linux-gnu/:/usr/lib/gcc/i686-linux-gnu/4.9/:/usr/lib/gcc/i686-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/i686-linux-gnu/4.9/:/usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/:/usr/lib/gcc/i686-linux-gnu/4.9/../../../../lib/:/lib/i386-linux-gnu/:/lib/../lib/:/usr/lib/i386-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/i686-linux-gnu/4.9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1358388877' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=i686']
-  link line: [ /usr/lib/gcc/i686-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/i686-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/i686-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJs7EbY.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_i386 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib/ld-linux.so.2 -z relro -o cmTryCompileExec1358388877 /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crt1.o /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crti.o /usr/lib/gcc/i686-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/i686-linux-gnu/4.9 -L/usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu -L/usr/lib/gcc/i686-linux-gnu/4.9/../../../../lib -L/lib/i386-linux-gnu -L/lib/../lib -L/usr/lib/i386-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/i686-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec1358388877.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/i686-linux-gnu/4.9/crtend.o /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2403954646' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=i686']
+  link line: [ /usr/lib/gcc/i686-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/i686-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/i686-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccIm1vOR.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_i386 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib/ld-linux.so.2 -z relro -o cmTryCompileExec2403954646 /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crt1.o /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crti.o /usr/lib/gcc/i686-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/i686-linux-gnu/4.9 -L/usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu -L/usr/lib/gcc/i686-linux-gnu/4.9/../../../../lib -L/lib/i386-linux-gnu -L/lib/../lib -L/usr/lib/i386-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/i686-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec2403954646.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/i686-linux-gnu/4.9/crtend.o /usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/i686-linux-gnu/4.9/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/i686-linux-gnu/4.9/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/i686-linux-gnu/4.9/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccJs7EbY.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccIm1vOR.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -240,7 +240,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib/ld-linux.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec1358388877] ==> ignore
+    arg [cmTryCompileExec2403954646] ==> ignore
     arg [/usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/i686-linux-gnu/4.9/../../../i386-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/i686-linux-gnu/4.9/crtbegin.o] ==> ignore
@@ -252,7 +252,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/i386-linux-gnu] ==> dir [/usr/lib/i386-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/i686-linux-gnu/4.9/../../..] ==> dir [/usr/lib/gcc/i686-linux-gnu/4.9/../../..]
-    arg [CMakeFiles/cmTryCompileExec1358388877.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec2403954646.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]

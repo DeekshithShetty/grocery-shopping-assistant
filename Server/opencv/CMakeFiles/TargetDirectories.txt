@@ -1,1 +1,1 @@
-/home/deekshith/Desktop/OpenCV/NFT/CMakeFiles/NFT.dir
+/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/CMakeFiles/NFT.dir

@@ -9,6 +9,7 @@ var multer = require('multer');
 var app      = express();
 var path    = require("path");
 
+
 var fileUpload_done = false;
 var port     = process.env.PORT || 8080;
 
@@ -86,6 +87,28 @@ app.post('/upload', function(req,res){
     }
 
 });
+
+//test for running string matching c++ program
+app.get('/run_stringMatching', function(req,res){
+    var jsonString,zzz;
+	const exec = require('child_process').exec;
+    const child = exec('./StringMatching/main',function(error, stdout, stderr) {
+        //console.log( "stdout: " + stdout);
+        //console.log("stderr: " + stdout);
+
+        jsonString = JSON.parse(stdout);
+        console.log(jsonString);
+
+        res.end(stdout);
+
+        if (error !== null) {
+            console.log("stderr: " + stderr);
+        }
+    });
+
+});
+
+
  
 app.get('/uploads/:file', function (req, res){
     file = req.params.file;

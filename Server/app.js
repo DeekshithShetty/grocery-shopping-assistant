@@ -5,7 +5,8 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var fs = require('fs');
-var multer = require('multer');
+var multerNft = require('multer');
+var multerProduct = require('multer');
 var app      = express();
 var path    = require("path");
 
@@ -14,24 +15,13 @@ var Parse = require('parse/node').Parse;
 //Parse.initialize("Your App Id", "Your JavaScript Key");
 Parse.initialize("jSVbre0kUwZsqd0QBwlrvRuGPjVT4Vqi7n2y91EU", "s1D3awAUsjq9vZsFDbwuPIeMDXiKvOdjXnohvmm5");
 
-var fileUpload_done = false;
+var nftFileUpload_done = false;
+var productFileUpload_done = false;
+
+var tempProductPicUploadsfilePath;
+var tempProductPicUploadsfilename;
+
 var port     = process.env.PORT || 8080;
-
-//Multer configurations for image upload 
-app.use(multer({ dest: './uploads/',
-        rename: function (fieldname, filename) {
-            return filename + "-" + Date.now();
-        },
-        onFileUploadStart: function (file) {
-            //console.log(file.originalname + ' is starting ...');
-        },
-        onFileUploadComplete: function (file) {
-            console.log("******* Image Uploaded to " + file.path + " *****");
-            //console.log(file.fieldname + ' uploaded to  ' + file.path);
-            fileUpload_done = true;
-        }
-}));
-
 
 // Configuration
 app.use(express.static(__dirname + '/public'));
@@ -120,12 +110,12 @@ app.get('/',function(req,res){
 //upload for mobile
 app.post('/mobileUpload', function(req,res){
 
-    if(fileUpload_done == true){
+    if(nftFileUpload_done == true){
         console.log("Product Name    : " + req.body.product_name);
         console.log("Product Barcode : " + req.body.product_barcode);
         //console.log(req.body);
         console.log(req.files);
-        fileUpload_done = false;
+        nftFileUpload_done = false;
         
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify({"success" : "Uploaded Successfully", "status" : 200}));
@@ -133,24 +123,325 @@ app.post('/mobileUpload', function(req,res){
     
 });
 
-//upload for pc
-app.post('/upload', function(req,res){
+//product pic upload for pc, run opencv feature matching and return
+// whether similar image is found or not
+app.post('/uploadProductPic', multerProduct({ 
+        dest: './tempProductPicUploads/',
+        changeDest: function(dest, req, res) {
+            //var newDestination = dest + req.params.type;
+            var newDestination = dest + 'n3hlRyuPko';
+            var stat = null;
+            try {
+                stat = fs.statSync(newDestination);
+            } catch (err) {
+                fs.mkdirSync(newDestination);
+            }
+            if (stat && !stat.isDirectory()) {
+                throw new Error('Directory cannot be created because an inode of a different type exists at "' + dest + '"');
+            }
+            return newDestination
+        },
+        rename: function (fieldname, filename) {
+            tempProductPicUploadsfilename = filename + "-" + Date.now();
+            return tempProductPicUploadsfilename;
+        },
+        onFileUploadStart: function (file) {
+        },
+        onFileUploadComplete: function (file) {
+            tempProductPicUploadsfilePath = file.path + "";
+            console.log("******* Image Uploaded to " + file.path + " *****");
+            productFileUpload_done = true;
+        }
+    }), function(req,res){
 
-    if(fileUpload_done == true){
-        console.log(req.files);
-        res.end('{"success" : "Uploaded Successfully", "status" : 200}');
-        fileUpload_done = false;
+    if(productFileUpload_done == true){
+
+        productFileUpload_done = false;
+
+        var jsonString;
+
+        var argumentString = [];
+
+        argumentString.push(tempProductPicUploadsfilePath);
+
+        //userId will be got from req.body
+        var userId = 'n3hlRyuPkoz';
+
+        var uploadPath = './productPicUploads/' + userId + '/';
+
+        if (fs.existsSync(uploadPath)) {
+            var list_of_files = fs.readdirSync(uploadPath);
+            for (var file in list_of_files) {
+                //console.log("filename : " + path.join(uploadPath, list_of_files[file]));
+                argumentString.push(path.join(uploadPath, list_of_files[file]));
+            }
+
+        } else{
+            console.log('{"found" : "false", "tempProductPicUploadsfilename" : \"' + tempProductPicUploadsfilename + '.jpg\", "status" : 200}');
+            res.end('{"found" : "false", "tempProductPicUploadsfilename" : \"' + tempProductPicUploadsfilename + '.jpg\", "status" : 200}');
+        }
+
+        //console.log("argumentString : " + argumentString);
+
+        if(argumentString.length < 2 ) {
+
+            console.log('{"found" : "false", "tempProductPicUploadsfilename" : \"' + tempProductPicUploadsfilename + '.jpg\", "status" : 200}');
+            res.end('{"found" : "false", "tempProductPicUploadsfilename" : \"' + tempProductPicUploadsfilename + '.jpg\", "status" : 200}');
+
+        } else {
+
+            //Run the opencv feature matching program
+            console.log("******* Opencv Feature Matching program called *****");
+            const execFile = require('child_process').execFile;
+            const nft = execFile('./FeatureMatching_new/FeatureMatching', argumentString,function(error, stdout, stderr) {
+
+                if (error !== null) {
+                    console.log("stderr: " + error);
+                }    
+
+                if(!stderr){
+
+                    jsonString = JSON.parse(stdout);
+                    console.log("******* Retrieved result from OpenCV Feature matching program *****");
+                    console.log("******* " + JSON.stringify(jsonString) + " *****");
+
+                    if(jsonString.isFoundSimilar == 1){
+
+
+                        //find the barcode for the product pic with the userid and productPicLocation
+                        var ProductImage = Parse.Object.extend("ProductImage");
+                        var query = new Parse.Query(ProductImage);
+                        query.equalTo("userId", userId);
+                        query.equalTo("productPicLocation", "./" + jsonString.imageName);
+
+                        query.find({
+                          success: function(results) {
+                            console.log("Successfully retrieved " + results.length + " objects.");
+
+                            if(results.length){
+
+                                var object = results[0];
+                                console.log("Barcode : " + object.get('barcode'));
+
+                                //cleaning up the temp product uploads folder for tht user
+                                var uploadPath = './tempProductPicUploads/' + userId + '/';
+                                fs.readdir(uploadPath, function(err, list_of_files) {
+                                    if (err) throw err;
+                                    list_of_files.map(function (file) {
+                                        return path.join(uploadPath, file);
+                                    }).forEach(function(filename) {
+                                        fs.unlink(filename);
+                                        console.log("******* Cleaned up temp product uploads *****");
+                                    });
+                                });
+                                console.log('{"found" : true, barcode :\"' + object.get('barcode') + '\", "status" : 200}');
+                                res.end('{"found" : true, barcode :\"' + object.get('barcode') + '\", "status" : 200}');
+                            }
+                            else{
+                                console.log('{"found" : "false", "tempProductPicUploadsfilename" : \"' + tempProductPicUploadsfilename + '.jpg\", "status" : 200}');
+                                res.end('{"found" : "false", "tempProductPicUploadsfilename" : \"' + tempProductPicUploadsfilename + '.jpg\", "status" : 200}');
+                            }
+                          },
+                          error: function(error) {
+                            console.log("Error: " + error.code + " " + error.message);
+                          }
+                        });
+
+                    } else {
+                        console.log('{"found" : "false", "tempProductPicUploadsfilename" : \"' + tempProductPicUploadsfilename + '.jpg\" "status" : 200}');
+                        res.end('{"found" : "false", "tempProductPicUploadsfilename" : \"' + tempProductPicUploadsfilename + '.jpg\" "status" : 200}');
+                            
+                    }
+
+                } else {
+
+                    console.log("******* Error from opencv feature matching program *****");
+                    console.log(stderr);
+                    res.end('{"error" : "Error at opencv server", "status" : 500}');
+                }
+
+                //res.end('{"success" : "All operations performed successfully", "status" : 200}');
+
+            });
+
+        }
+
     }
 
 });
 
-//upload for pc, run opencv and store in parse
-app.post('/upload2', function(req,res){
+//nft pic upload for pc, run opencv and return json nutrients to android
+app.post('/uploadNFTPic', multerNft({ 
+        dest: './uploads/',
+        rename: function (fieldname, filename) {
+            return filename + "-" + Date.now();
+        },
+        onFileUploadStart: function (file) {
+            //console.log(file.originalname + ' is starting ...');
+        },
+        onFileUploadComplete: function (file) {
+            console.log("******* Image Uploaded to " + file.path + " *****");
+            //console.log(file.fieldname + ' uploaded to  ' + file.path);
+            nftFileUpload_done = true;
+        }
+    }),function(req,res){
 
-    if(fileUpload_done == true){
+    if(nftFileUpload_done == true){
 
         //console.log("******* Image Uploaded Successfully*****");
-        fileUpload_done = false;
+        nftFileUpload_done = false;
+
+        //retrieved from req.body
+        var userEmail = 'ash@gmail.com';
+        var userId = 'n3hlRyuPko';
+        var barcode = '9878765456';
+        var tempProductPicUploadsfilename = 'paper2-1453651369838.jpg';
+        var tempProductPicUploadsfilePath = './tempProductPicUploads/' + userId + '/' + tempProductPicUploadsfilename;
+
+        //move file from tempProductPicUploadsfilePath to userProductPicUploadsfilePath
+        var userProductPicUploadsfilePath = './productPicUploads/' + userId + '/' + tempProductPicUploadsfilename;
+        console.log("tempProductPicUploadsfilePath : " + tempProductPicUploadsfilePath);
+        console.log("userProductPicUploadsfilePath : " + userProductPicUploadsfilePath);
+        fs.rename(tempProductPicUploadsfilePath, userProductPicUploadsfilePath, function(err){
+            if (err) res.json(err);
+
+            console.log('Image is moved ...');
+
+            //store the userId,barcode,imagepath in
+            var ProductImage = Parse.Object.extend("ProductImage");
+            var productImage = new ProductImage();
+
+
+            productImage.set("userId", userId);
+            productImage.set("userEmail", userEmail);
+            productImage.set("barcode", barcode);
+            productImage.set("productPicLocation", userProductPicUploadsfilePath);
+
+
+            productImage.save(null, {
+              success: function(productImageObject) {
+
+                console.log("******* Saved the object to Parse with objectId : " + productImageObject.id + " *****");
+                
+                var jsonString;
+                //Run the opencv program
+                console.log("******* Opencv NFT program called *****");
+                const exec = require('child_process').exec;
+                const nft = exec('./NFT_new/NFT ./uploads/*.jpg',function(error, stdout, stderr) {
+
+                    if (error !== null) {
+                        console.log("stderr: " + error);
+                    }    
+
+                    if(!stderr){
+                        
+                        jsonString = JSON.parse(stdout);
+                        console.log("******* Retrieved result from OpenCV program *****");
+                        console.log("******* " + JSON.stringify(jsonString) + " *****");
+
+
+                        //return the json back to android
+                        console.log('{"success" : "All operations performed successfully", "status" : 200, "jsonNutrients" : '+ JSON.stringify(jsonString.jsonNutrients) +'}');
+                        res.end('{"success" : "All operations performed successfully", "status" : 200, "jsonNutrients" : '+ JSON.stringify(jsonString.jsonNutrients) +'}');
+
+                    } else {
+
+                        console.log("******* Error from opencv program *****");
+                        console.log(stderr);
+                        res.end('{"error" : "Error at opencv server", "status" : 500}');
+                    }
+
+                    //cleaning up the uploads folder
+                    var uploadPath = "./uploads/"
+                    fs.readdir(uploadPath, function(err, list_of_files) {
+                        if (err) throw err;
+                        list_of_files.map(function (file) {
+                            return path.join(uploadPath, file);
+                        }).forEach(function(filename) {
+                            fs.unlink(filename);
+                            console.log("******* Cleaned up uploads *****");
+                        });
+                    });
+
+                });
+
+              },
+              error: function(productImageObject, error) {
+
+                console.log('Failed to create new object, with error code: ' + error.message);
+              }
+            });
+
+        });
+    }
+
+});
+
+//nutrient info upload  for pc, save it in parse
+app.post('/uploadNutrientInfo', function(req,res){
+
+    //retrieved from request
+    var username = "ash@gmail.com" ;
+    var productName = "Kissan Jam";
+    var productBarcode = "9878765456";
+    var energy = "500";
+    var carbohydrates = "70"; 
+    var sugars = "24";
+    var protein = "7";
+    var fats = "20";
+
+
+
+    var NutrientInfo = Parse.Object.extend("NutrientInfo");
+    var nutrientInfo = new NutrientInfo();
+
+    nutrientInfo.set("username", username);
+    nutrientInfo.set("productName", productName);
+    nutrientInfo.set("productBarcode", productBarcode);
+    nutrientInfo.set("energy", energy);
+    nutrientInfo.set("carbohydrates", carbohydrates);
+    nutrientInfo.set("sugars", sugars);
+    nutrientInfo.set("protein", protein);
+    nutrientInfo.set("fats", fats);
+
+
+    nutrientInfo.save(null, {
+      success: function(nutrientInfoObject) {
+        // Execute any logic that should take place after the object is saved.
+        console.log("******* Saved the object to Parse with objectId : " + nutrientInfoObject.id + " *****");
+        res.end('{"success" : "All operations performed successfully", "status" : 200}');
+
+      },
+      error: function(nutrientInfoObject, error) {
+        // Execute any logic that should take place if the save fails.
+        // error is a Parse.Error with an error code and message.
+        console.log('Failed to create new object, with error code: ' + error.message);
+        res.end('{"error" : "Error during saving to parse", "status" : 500}');
+      }
+    });
+
+});
+
+//upload for pc, run opencv and store in parse
+app.post('/upload2', multerNft({ 
+        dest: './uploads/',
+        rename: function (fieldname, filename) {
+            return filename + "-" + Date.now();
+        },
+        onFileUploadStart: function (file) {
+            //console.log(file.originalname + ' is starting ...');
+        },
+        onFileUploadComplete: function (file) {
+            console.log("******* Image Uploaded to " + file.path + " *****");
+            //console.log(file.fieldname + ' uploaded to  ' + file.path);
+            nftFileUpload_done = true;
+        }
+}),function(req,res){
+
+    if(nftFileUpload_done == true){
+
+        //console.log("******* Image Uploaded Successfully*****");
+        nftFileUpload_done = false;
 
         var jsonString;
         //Run the opencv program
@@ -174,7 +465,7 @@ app.post('/upload2', function(req,res){
                 nutrientInfo.set("username", "Vegeta");
                 nutrientInfo.set("productName", "Nestle Maggi");
                 nutrientInfo.set("productBarcode", "9878765456");
-                nutrientInfo.set("energy", "500");
+                nutrientInfo.set("energy", jsonString.jsonNutrients.Energy + "");
                 nutrientInfo.set("carbohydrates", jsonString.jsonNutrients.Carbohydrates + "");
                 nutrientInfo.set("sugars", jsonString.jsonNutrients.Sugars + "");
                 nutrientInfo.set("protein", jsonString.jsonNutrients.Protein + "");
@@ -221,83 +512,6 @@ app.post('/upload2', function(req,res){
 
 });
 
-//test for running opencv program
-app.get('/opencv', function(req,res){
-
-    var jsonString;
-/*
-    const spawn = require('child_process').spawn;
-    //const nft = spawn('./NFT_new/NFT',['./uploads/*.jpg']);
-    const nft = exec('./NFT_new/NFT ./uploads/*.jpg');
-
-    nft.stdout.on('data', function(data) {
-        jsonString = JSON.parse(data);
-        console.log(jsonString);
-        res.end(data);
-    });
-
-    nft.stderr.on('data', function(data) {
-      console.log("NFT stderr: " + data);
-      res.end(data);
-    });
-
-    nft.on('close', function(code) {
-      console.log("Opencv process exited with code : " + code);
-    });
-*/
-    const exec = require('child_process').exec;
-    const nft = exec('./NFT_new/NFT ./uploads/*.jp',function(error, stdout, stderr) {
-
-        if(!stderr){
-
-            jsonString = JSON.parse(stdout);
-            console.log(jsonString);
-            res.end(stdout);
-        } else {
-
-            console.log(stderr);
-            res.end(stderr);
-        }
-
-        if (error !== null) {
-            console.log("stderr: " + error);
-        }
-    });
-
-
-});
-
-
-//test for running string matching c++ program
-app.get('/run_stringMatching', function(req,res){
-    var jsonString;
-	const exec = require('child_process').exec;
-    const child = exec('./StringMatching/main',function(error, stdout, stderr) {
-        //console.log( "stdout: " + stdout);
-        //console.log("stderr: " + stdout);
-
-        jsonString = JSON.parse(stdout);
-        console.log(jsonString);
-
-        res.end(stdout);
-
-        if (error !== null) {
-            console.log("stderr: " + stderr);
-        }
-    });
-
-});
-
-
- 
-app.get('/uploads/:file', function (req, res){
-    file = req.params.file;
-    var dirname = "C:/Users/deeks/Desktop/Node.js/Node-Android";
-    var img = fs.readFileSync(dirname + "/uploads/" + file);
-    res.writeHead(200, {'Content-Type': 'image/jpg' });
-    res.end(img, 'binary');
- 
-});
  
 app.listen(port);
 console.log('Node.js server running on port ' + port);

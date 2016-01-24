@@ -29,6 +29,28 @@
 	              	<button type="submit" class="btn btn-success" id="upload_btn_short"> Upload </button>
             	</form>
             </div>
+        </section>
+
+        <section>
+			<h2>Product Image Upload</h2>
+          	<div class="section-inner">
+            	<form role="form" class="image_upload" enctype="multipart/form-data" id="productImageUploadForm">
+	              	<div class="form-group">
+	                	<label for="post_descr"> Product Image , Extension : '.jpg' </label>
+	                	<input type="file" class="form-control" name="myProductImage" accept="image/gif, image/jpeg, image/png" id="image_input_short2" />
+
+	                	<div class="main-container">
+	                  		<ul class="flex-container" id="sub_box_short2"></ul>  
+	                    	<div class="alert alert-info col-md-12 col-sm-12 col-xs-12 photo-box-info" id="photo-box3" />
+	                    	<p>Upload an image</p>
+	                	</div>
+
+	                  	<img id="preview_short2" class="image" src="http://gsm24unlock.com/images/no_image.gif" alt="your image" />
+
+	              	</div>  
+	              	<button type="submit" class="btn btn-success" id="upload_btn_short2"> Upload </button>
+            	</form>
+            </div>
         </section>    	
 
 	</body>
@@ -65,7 +87,7 @@
 
 	          	$.ajax({
 	            	type: 'post',
-	            	url: '/upload2',
+	            	url: '/uploadNFTPic',
 	            	dataType: 'json',
 		            data: formData,
 		            cache: false,
@@ -85,7 +107,53 @@
 	            	}
 	          	});
 	        });  
-      	});         
+      	});
+
+      	function readURL2(input){
+            if(input.files && input.files[0]){
+              var reader = new FileReader();
+              reader.onload = function (e){
+                $('#preview_short2').attr('src', e.target.result);
+              }
+              reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+      	$("#image_input_short2").change(function(){
+        	readURL2(this);
+      	});
+
+      	$('#upload_btn_short2').click(function (event) {
+        	$('#productImageUploadForm').on('submit', function(e) {
+	          	e.preventDefault();
+
+	          	var formData = new FormData($('form')[1]);
+
+	          	$('#sub_box_short2').html('<div class="alert alert-info col-md-12 col-sm-12 col-xs-12 photo-box-info" id="photo-box3"><p>Please Wait Uploading .... </p></div>');
+
+	          	$.ajax({
+	            	type: 'post',
+	            	url: '/uploadProductPic',
+	            	dataType: 'json',
+		            data: formData,
+		            cache: false,
+		            contentType: false,
+		            processData: false,
+		            success:function(response){
+		              	if(response.status == 200){
+			                $('#sub_box_short2').html('<div class="alert alert-info col-md-12 col-sm-12 col-xs-12 photo-box-sucess" id="photo-box3"><p>The Image has been uploaded </p></div>');
+			                $('#productImageUploadForm').trigger("reset");
+			                $('#preview_short2').attr('src', 'http://gsm24unlock.com/images/no_image.gif');
+			            }else{
+			                $('#sub_box_short2').html('<div class="alert alert-danger col-md-12 col-sm-12 col-xs-12 photo-box-error" id="photo-box3"><p>There was some error </p></div>');
+			            }
+	            	},
+	            	error:function(){
+	              		$('#sub_box_short2').html('<div class="alert alert-danger col-md-12 col-sm-12 col-xs-12 photo-box-error" id="photo-box3"><p>There was some error </p></div>');
+	            	}
+	          	});
+	        });  
+      	});                  
 	</script>
 
 </html>

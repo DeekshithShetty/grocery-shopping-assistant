@@ -161,15 +161,17 @@ string nutrientinfo_regex_search(std::string& input){
     std::regex sugarsRegex("[S][u][a-z]*[ ]([0-9|o|O]+[a-z]*)");
     std::regex proteinRegex("[P][r][a-z]*[ ]([0-9|o|O]+[a-z]*)");
     std::regex fatsRegex("[F][a][a-z]*[ ]([0-9|o|O]+[a-z]*)");
+    std::regex energyRegex("[E][n][a-z]*[ ]([0-9|o|O]+[a-z]*)");
 
     std::smatch nut_match2;
 
     regex regexOto0("[O]");
 
-    double carbsValue;
-    double sugarsValue;
-    double proteinValue;
-    double fatsValue;
+    double carbsValue = 0;
+    double sugarsValue = 0;
+    double proteinValue = 0;
+    double fatsValue = 0;
+    double energyValue = 0;
 
     while (std::regex_search(input, match, rgx)){
         //std::cout << "Match : " << match[0] << endl;
@@ -285,12 +287,40 @@ string nutrientinfo_regex_search(std::string& input){
                 //std::cout << "\tNew Fats = " << fatsValue << "g" << endl;
             }
             
+        }else if (std::regex_search(match[0].str(), nut_match, energyRegex)){
+
+            //std::cout << "\tIts Energy" << endl;
+            //std::cout << "\tOld Energy = " << nut_match[1].str() << endl;
+
+            string OremovedString = regex_replace(nut_match[1].str(), regexOto0, "0");
+
+            std::regex regex3("([0-9]+)[3]");
+            std::regex regexTh("([0-9]+)[t][h]");
+
+            if(std::regex_search(OremovedString, nut_match2, regex3)){
+
+                energyValue = ::atof(nut_match2[1].str().c_str());
+                //std::cout << "\tNew Energy = " << energyValue << "kcal" << endl;
+            } else if(std::regex_search(OremovedString, nut_match2, regexTh)){
+
+                regex thRegex("[t][h]");
+                string thRelpacedString = regex_replace(OremovedString, thRegex, "5");
+                energyValue = ::atof(thRelpacedString.c_str());
+                //std::cout << "\tNew Energy = " << energyValue << "kcal" << endl;
+            }else {
+                regex regexG("[k][a-z]*");
+                string GremovedString = regex_replace(OremovedString, regexG, "");
+                energyValue = ::atof(GremovedString.c_str());
+                //std::cout << "\tNew Energy = " << energyValue << "kcal" << endl;
+            }
+            
         }
          input = match.suffix().str();
 
     }
 
     s << "{\
+    \"Energy\" : " << energyValue << ",\
     \"Carbohydrates\" : " << carbsValue << ",\
     \"Sugars\" : " << sugarsValue << ",\
     \"Protein\" : " << proteinValue << ",\

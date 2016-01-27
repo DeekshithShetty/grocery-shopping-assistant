@@ -1,0 +1,1 @@
+Upload folder where NFT pics are uploaded

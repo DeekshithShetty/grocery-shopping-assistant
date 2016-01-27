@@ -1,0 +1,1 @@
+A temp folder where product pics are uploaded

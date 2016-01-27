@@ -10,10 +10,18 @@ var multerProduct = require('multer');
 var app      = express();
 var path    = require("path");
 
+//for running web ocr
+var querystring = require('querystring');
+var http = require('http');
+
 var Parse = require('parse/node').Parse;
 
 //Parse.initialize("Your App Id", "Your JavaScript Key");
 Parse.initialize("jSVbre0kUwZsqd0QBwlrvRuGPjVT4Vqi7n2y91EU", "s1D3awAUsjq9vZsFDbwuPIeMDXiKvOdjXnohvmm5");
+
+//www.ocrwebservice.com authenication
+var ocr_web_service_license_code = "8DDC90BE-9E9B-4416-A8DE-75B7E323899E";
+var ocr_web_service_user_name =  "ABHIRAM";
 
 var nftFileUpload_done = false;
 var productFileUpload_done = false;
@@ -21,6 +29,9 @@ var productFileUpload_done = false;
 var tempProductPicUploadsfilePath;
 var tempProductPicUploadsfilename;
 var userIdFileUpload;
+
+//for nftPicUpload2
+var nftFilename;
 
 var port     = process.env.PORT || 8080;
 
@@ -32,79 +43,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : false }));
 
 
-//test for connecting to parse
-app.get('/parse_find', function(req,res){
-
-    var NutrientInfo = Parse.Object.extend("NutrientInfo");
-    var query = new Parse.Query(NutrientInfo);
-    query.equalTo("username", "Gohan");
-    query.equalTo("productBarcode", "2343434532");
-
-    query.find({
-      success: function(results) {
-        console.log("Successfully retrieved " + results.length + " objects.");
-        // Do something with the returned Parse.Object values
-        for (var i = 0; i < results.length; i++) {
-          var object = results[i];
-          console.log("Username : " + object.get('username'));
-        }
-      },
-      error: function(error) {
-        console.log("Error: " + error.code + " " + error.message);
-      }
-    });
-
-});
-
-app.get('/parse_get', function(req,res){
-    var NutrientInfo = Parse.Object.extend("NutrientInfo");
-    var query = new Parse.Query(NutrientInfo);
-    query.get("BZQFR1RggH", {
-      success: function(nutrientInfoObject) {
-        // The object was retrieved successfully.
-        console.log("Username : " + nutrientInfoObject.get('username'));
-      },
-      error: function(object, error) {
-        // The object was not retrieved successfully.
-        // error is a Parse.Error with an error code and message.
-      }
-    });
-
-});
-
-app.get('/parse_save', function(req,res){
-    var NutrientInfo = Parse.Object.extend("NutrientInfo");
-    var nutrientInfo = new NutrientInfo();
-
-    nutrientInfo.set("username", "Vegeta");
-    nutrientInfo.set("productName", "Nestle Maggi");
-    nutrientInfo.set("productBarcode", "9878765456");
-    nutrientInfo.set("energy", "500");
-    nutrientInfo.set("carbohydrates", "90");
-    nutrientInfo.set("sugars", "67");
-    nutrientInfo.set("protein", "34");
-    nutrientInfo.set("fats", "22");
-
-
-    nutrientInfo.save(null, {
-      success: function(nutrientInfoObject) {
-        // Execute any logic that should take place after the object is saved.
-        console.log('New object created with objectId: ' + nutrientInfoObject.id);
-      },
-      error: function(nutrientInfoObject, error) {
-        // Execute any logic that should take place if the save fails.
-        // error is a Parse.Error with an error code and message.
-        console.log('Failed to create new object, with error code: ' + error.message);
-      }
-    });
-
-});
-
-
 // Routes
  
 app.get('/',function(req,res){
     //res.end("Node-Android");
+
     res.sendfile('./index.html');
 });
 
@@ -263,8 +206,213 @@ app.post('/uploadProductPicMobile', multerProduct({
 
 });
 
-//nft pic upload for mobile, run opencv and return json nutrients to android
+//nft pic upload for mobile, run opencv to crop the image , run ocr webservice  and return json nutrients to android
 app.post('/uploadNFTPicMobile', multerNft({ 
+        dest: './uploads/',
+        rename: function (fieldname, filename) {
+            nftFilename = filename + "-" + Date.now()
+            return nftFilename;
+        },
+        onFileUploadStart: function (file) {
+            //console.log(file.originalname + ' is starting ...');
+        },
+        onFileUploadComplete: function (file) {
+            console.log("******* Image Uploaded to " + file.path + " *****");
+            //console.log(file.fieldname + ' uploaded to  ' + file.path);
+            nftFileUpload_done = true;
+        }
+    }),function(req,response){
+
+    if(nftFileUpload_done == true){
+
+        //console.log("******* Image Uploaded Successfully*****");
+        nftFileUpload_done = false;
+
+        response.setHeader('Content-Type', 'application/json');
+
+        //retrieved from req.body
+        var userEmail = req.body.user_email;
+        userEmail = userEmail.replace(/["']/g,"");
+        var userId = req.body.user_id;
+        userId = userId.replace(/["']/g,"");
+        var barcode = req.body.product_barcode;
+        barcode = barcode.replace(/["']/g,"");
+        var tempProductPicUploadsfilename = req.body.product_pic_filename;
+        tempProductPicUploadsfilename = tempProductPicUploadsfilename.replace(/["']/g,"");
+        tempProductPicUploadsfilename = tempProductPicUploadsfilename.replace(/[\\]/g,"");
+        //var tempProductPicUploadsfilePath = "./tempProductPicUploads/" + userId + "/" + tempProductPicUploadsfilename;
+        var tempProductPicUploadsfilePath = "./tempProductPicUploads/" + tempProductPicUploadsfilename;
+
+        //move file from tempProductPicUploadsfilePath to userProductPicUploadsfilePath
+        var userProductPicUploadsfilePath = "./productPicUploads/" + userId + "/" + tempProductPicUploadsfilename;
+        console.log("tempProductPicUploadsfilePath : " + tempProductPicUploadsfilePath);
+        console.log("userProductPicUploadsfilePath : " + userProductPicUploadsfilePath);
+
+        if (!fs.existsSync("./productPicUploads/" + userId + "/")) {
+            fs.mkdirSync("./productPicUploads/" + userId + "/");
+        }
+        fs.rename(tempProductPicUploadsfilePath, userProductPicUploadsfilePath, function(err){
+            if (err){
+                response.send(JSON.stringify({"error" : "stderr : " + err, "status" : 500}));
+                console.log(JSON.stringify({"error" : "stderr : " + err, "status" : 500}));
+            }
+
+            console.log('Image is moved ...');
+
+            //store the userId,barcode,imagepath in
+            var ProductImage = Parse.Object.extend("ProductImage");
+            var productImage = new ProductImage();
+
+
+            productImage.set("userId", userId);
+            productImage.set("userEmail", userEmail);
+            productImage.set("barcode", barcode);
+            productImage.set("productPicLocation", userProductPicUploadsfilePath);
+
+
+            productImage.save(null, {
+              success: function(productImageObject) {
+
+                console.log("******* Saved the object to Parse with objectId : " + productImageObject.id + " *****");
+                
+                var nutrientInfoString;
+                var jsonString;
+
+                //Run the opencv program
+                console.log("******* Opencv NFT program called *****");
+                var argumentString = [];
+
+                argumentString.push('./uploads/' + nftFilename + '.jpg');
+
+                console.log("******* String Matching program called *****");
+
+                const execFile = require('child_process').execFile;
+                const nft = execFile('./NFT_WebOCR/NFT/NFT', argumentString,function(error, stdout, stderr) {
+                    if (error !== null) {
+                        console.log("stderr: " + error);
+                    }    
+
+                    if(!stderr){
+                        
+                        console.log("******* Opencv cropped the image to table *****");
+                        console.log(stdout);
+                        //run the webocr here
+                        var ocrURL = "www.ocrwebservice.com";
+                        var ocrServicePath = "/restservices/processDocument?gettext=true";
+                        var croppedNFTImagePath = './uploads/' + nftFilename + '.jpg';
+
+                        var options = {
+                            host: ocrURL,
+                            port: 80,
+                            path: ocrServicePath,
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': 'Basic ' + new Buffer(ocr_web_service_user_name + ':' + ocr_web_service_license_code).toString('base64')
+                            }
+                        };
+
+                        var postReq = http.request(options, function(res) {
+                            console.log('STATUS: ' + res.statusCode);
+                            //console.log('HEADERS: ' + JSON.stringify(res.headers));
+                            res.setEncoding('utf8');
+
+                            var str = '';
+
+                            res.on('data', function (chunk) {
+                                str += chunk;
+                            });
+
+                            res.on('end', function () {
+
+                                console.log("******* Retrieved result from ocrwebservice.com *****");
+
+                                if(res.statusCode == 200){
+
+                                    var jsonStr =  JSON.parse(str);
+                                    nutrientInfoString = JSON.stringify(jsonStr.OCRText[0][0]);
+
+                                    console.log('Nutrient Info: ' + nutrientInfoString);
+
+                                    var argumentString = [];
+
+                                    argumentString.push(nutrientInfoString);
+
+                                    console.log("******* String Matching program called *****");
+
+                                    const execFile = require('child_process').execFile;
+                                    const stringMatching = execFile('./NFT_WebOCR/StringMatching/StringMatching', argumentString,function(error2, stdout2, stderr2) {
+
+                                        if (error2 !== null) {
+                                            console.log("stderr: " + error2);
+                                        }    
+
+                                        if(!stderr2){
+                                            
+                                            jsonString = JSON.parse(stdout2);
+                                            console.log("******* Retrieved result from String Matching program *****");
+                                            console.log("******* " + JSON.stringify(jsonString) + " *****");
+
+                                            //return the json back to android
+                                            console.log('{"success" : "All operations performed successfully", "status" : 200, "jsonNutrients" : '+ JSON.stringify(jsonString.jsonNutrients) +'}');
+                                            response.send(JSON.stringify({"success" : "All operations performed successfully", "status" : 200, "energy" : jsonString.jsonNutrients.Energy, "carbohydrates" : jsonString.jsonNutrients.Carbohydrates, "sugars" : jsonString.jsonNutrients.Sugars, "protein" : jsonString.jsonNutrients.Protein, "fats" : jsonString.jsonNutrients.Fats}));
+
+                                        } else {
+
+                                            console.log("******* Error from String Matching program *****");
+                                            console.log(stderr2);
+                                            response.end('{"error" : "Error at String Matching server", "status" : 500}');
+                                        }
+                                    });
+
+                                    //cleaning up the uploads folder
+                                    var uploadPath = "./uploads/";
+                                    fs.readdir(uploadPath, function(err, list_of_files) {
+                                        if (err) throw err;
+                                        list_of_files.map(function (file) {
+                                            return path.join(uploadPath, file);
+                                        }).forEach(function(filename) {
+                                            fs.unlink(filename);
+                                            console.log("******* Cleaned up uploads *****");
+                                        });
+                                    });
+                                }
+
+                            });
+                        });
+
+                        var stream = fs.createReadStream(croppedNFTImagePath);
+                        stream.on('data', function(data) {
+                            postReq.write(data);
+                        });
+                        stream.on('end', function() {
+                            postReq.end();
+                        });
+
+                    } else {
+
+                        console.log("******* Error from opencv program *****");
+                        console.log(stderr);
+                        response.end('{"error" : "Error at opencv server", "status" : 500}');
+                    }
+
+                });
+
+              },
+              error: function(productImageObject, error) {
+
+                console.log('Failed to create new object, with error code: ' + error.message);
+                response.send(JSON.stringify({"error" : "Failed to create new object, with error code: " + error.message, "status" : 500}));
+              }
+            });
+
+        });
+    }
+
+});
+
+//nft pic upload for mobile, run opencv and return json nutrients to android
+app.post('/uploadNFTPicMobile2', multerNft({ 
         dest: './uploads/',
         rename: function (fieldname, filename) {
             return filename + "-" + Date.now();
@@ -717,6 +865,156 @@ app.post('/uploadNFTPic', multerNft({
 
 });
 
+//nft pic upload for pc, run opencv to crop the image , run ocr webservice and return json nutrients to android
+app.post('/uploadNFTPic2', multerNft({ 
+        dest: './uploads/',
+        rename: function (fieldname, filename) {
+            nftFilename = filename + "-" + Date.now()
+            return nftFilename;
+        },
+        onFileUploadStart: function (file) {
+        },
+        onFileUploadComplete: function (file) {
+            console.log("******* Image Uploaded to " + file.path + " *****");
+            nftFileUpload_done = true;
+        }
+    }),function(req,response){
+
+    if(nftFileUpload_done == true){
+
+        //console.log("******* Image Uploaded Successfully*****");
+        nftFileUpload_done = false;
+
+        var nutrientInfoString;
+        var jsonString;
+
+        //Run the opencv program
+        console.log("******* Opencv NFT program called *****");
+        var argumentString = [];
+
+        argumentString.push('./uploads/' + nftFilename + '.jpg');
+
+        console.log("******* String Matching program called *****");
+
+        const execFile = require('child_process').execFile;
+        const nft = execFile('./NFT_WebOCR/NFT/NFT', argumentString,function(error, stdout, stderr) {
+            if (error !== null) {
+                console.log("stderr: " + error);
+            }    
+
+            if(!stderr){
+                
+                console.log("******* Opencv cropped the image to table *****");
+                console.log(stdout);
+                //run the webocr here
+                var license_code = "8DDC90BE-9E9B-4416-A8DE-75B7E323899E";
+                var user_name =  "ABHIRAM";
+                var ocrURL = "www.ocrwebservice.com";
+                var ocrServicePath = "/restservices/processDocument?gettext=true";
+                var croppedNFTImagePath = './uploads/' + nftFilename + '.jpg';
+
+                var options = {
+                    host: ocrURL,
+                    port: 80,
+                    path: ocrServicePath,
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Basic ' + new Buffer(user_name + ':' + license_code).toString('base64')
+                    }
+                };
+
+                var postReq = http.request(options, function(res) {
+                    console.log('STATUS: ' + res.statusCode);
+                    //console.log('HEADERS: ' + JSON.stringify(res.headers));
+                    res.setEncoding('utf8');
+
+                    var str = '';
+
+                    res.on('data', function (chunk) {
+                        str += chunk;
+                    });
+
+                    res.on('end', function () {
+
+                        console.log("******* Retrieved result from ocrwebservice.com *****");
+
+                        if(res.statusCode == 200){
+
+                            var jsonStr =  JSON.parse(str);
+                            nutrientInfoString = JSON.stringify(jsonStr.OCRText[0][0]);
+
+                            console.log('Nutrient Info: ' + nutrientInfoString);
+
+                            var argumentString = [];
+
+                            argumentString.push(nutrientInfoString);
+
+                            console.log("******* String Matching program called *****");
+
+                            const execFile = require('child_process').execFile;
+                            const stringMatching = execFile('./NFT_WebOCR/StringMatching/StringMatching', argumentString,function(error2, stdout2, stderr2) {
+
+                                if (error2 !== null) {
+                                    console.log("stderr: " + error2);
+                                }    
+
+                                if(!stderr2){
+                                    
+                                    jsonString = JSON.parse(stdout2);
+                                    console.log("******* Retrieved result from String Matching program *****");
+                                    console.log("******* " + JSON.stringify(jsonString) + " *****");
+
+                                    //return the json back to android
+                                    console.log('{"success" : "All operations performed successfully", "status" : 200, "jsonNutrients" : '+ JSON.stringify(jsonString.jsonNutrients) +'}');
+                                    response.send(JSON.stringify({"success" : "All operations performed successfully", "status" : 200, "energy" : jsonString.jsonNutrients.Energy, "carbohydrates" : jsonString.jsonNutrients.Carbohydrates, "sugars" : jsonString.jsonNutrients.Sugars, "protein" : jsonString.jsonNutrients.Protein, "fats" : jsonString.jsonNutrients.Fats}));
+
+                                } else {
+
+                                    console.log("******* Error from String Matching program *****");
+                                    console.log(stderr2);
+                                    response.end('{"error" : "Error at String Matching server", "status" : 500}');
+                                }
+                            });
+
+                            //cleaning up the uploads folder
+                            var uploadPath = "./uploads/";
+                            fs.readdir(uploadPath, function(err, list_of_files) {
+                                if (err) throw err;
+                                list_of_files.map(function (file) {
+                                    return path.join(uploadPath, file);
+                                }).forEach(function(filename) {
+                                    fs.unlink(filename);
+                                    console.log("******* Cleaned up uploads *****");
+                                });
+                            });
+                        }
+
+                    });
+                });
+
+                var stream = fs.createReadStream(croppedNFTImagePath);
+                stream.on('data', function(data) {
+                    postReq.write(data);
+                });
+                stream.on('end', function() {
+                    postReq.end();
+                });
+
+            } else {
+
+                console.log("******* Error from opencv program *****");
+                console.log(stderr);
+                response.end('{"error" : "Error at opencv server", "status" : 500}');
+            }
+
+        });
+    }
+
+});
+
+
+
 //nutrient info upload  for pc, save it in parse
 app.post('/uploadNutrientInfo', function(req,res){
 
@@ -761,97 +1059,6 @@ app.post('/uploadNutrientInfo', function(req,res){
     });
 
 });
-
-//upload for pc, run opencv and store in parse
-app.post('/upload2', multerNft({ 
-        dest: './uploads/',
-        rename: function (fieldname, filename) {
-            return filename + "-" + Date.now();
-        },
-        onFileUploadStart: function (file) {
-            //console.log(file.originalname + ' is starting ...');
-        },
-        onFileUploadComplete: function (file) {
-            console.log("******* Image Uploaded to " + file.path + " *****");
-            //console.log(file.fieldname + ' uploaded to  ' + file.path);
-            nftFileUpload_done = true;
-        }
-}),function(req,res){
-
-    if(nftFileUpload_done == true){
-
-        //console.log("******* Image Uploaded Successfully*****");
-        nftFileUpload_done = false;
-
-        var jsonString;
-        //Run the opencv program
-        console.log("******* Opencv program called *****");
-        const exec = require('child_process').exec;
-        const nft = exec('./NFT_new/NFT ./uploads/*.jpg',function(error, stdout, stderr) {
-
-            if (error !== null) {
-                console.log("stderr: " + error);
-            }    
-
-            if(!stderr){
-                
-                jsonString = JSON.parse(stdout);
-                console.log("******* Retrieved result from OpenCV program *****");
-                console.log("******* " + JSON.stringify(jsonString) + " *****");
-
-                var NutrientInfo = Parse.Object.extend("NutrientInfo");
-                var nutrientInfo = new NutrientInfo();
-
-                nutrientInfo.set("username", "Vegeta");
-                nutrientInfo.set("productName", "Nestle Maggi");
-                nutrientInfo.set("productBarcode", "9878765456");
-                nutrientInfo.set("energy", jsonString.jsonNutrients.Energy + "");
-                nutrientInfo.set("carbohydrates", jsonString.jsonNutrients.Carbohydrates + "");
-                nutrientInfo.set("sugars", jsonString.jsonNutrients.Sugars + "");
-                nutrientInfo.set("protein", jsonString.jsonNutrients.Protein + "");
-                nutrientInfo.set("fats", jsonString.jsonNutrients.Fats + "");
-
-
-                nutrientInfo.save(null, {
-                  success: function(nutrientInfoObject) {
-                    // Execute any logic that should take place after the object is saved.
-                    console.log("******* Saved the object to Parse with objectId : " + nutrientInfoObject.id + " *****");
-                    res.end('{"success" : "All operations performed successfully", "status" : 200}');
-
-                  },
-                  error: function(nutrientInfoObject, error) {
-                    // Execute any logic that should take place if the save fails.
-                    // error is a Parse.Error with an error code and message.
-                    console.log('Failed to create new object, with error code: ' + error.message);
-                  }
-                });
-
-
-            } else {
-
-                console.log("******* Error from opencv program *****");
-                console.log(stderr);
-                res.end('{"error" : "Error at opencv server", "status" : 500}');
-            }
-
-            //cleaning up the uploads folder
-            var uploadPath = "./uploads/"
-            fs.readdir(uploadPath, function(err, list_of_files) {
-                if (err) throw err;
-                list_of_files.map(function (file) {
-                    return path.join(uploadPath, file);
-                }).forEach(function(filename) {
-                    fs.unlink(filename);
-                    console.log("******* Cleaned up uploads *****");
-                });
-            });
-
-        });
-
-    }
-
-});
-
  
 app.listen(port);
 console.log('Node.js server running on port ' + port);

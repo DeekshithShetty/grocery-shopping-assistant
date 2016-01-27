@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -std=c++0x    CMakeFiles/StringMatching.dir/main.cpp.o  -o StringMatching -rdynamic 

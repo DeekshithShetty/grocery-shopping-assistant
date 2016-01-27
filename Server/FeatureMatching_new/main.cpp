@@ -87,7 +87,7 @@ int main( int argc, char** argv ){
         }
     }
 
-    if(bestMatchSize < good_matches.size()){
+    if(bestMatchSize <= good_matches.size()){
       bestMatchSize = good_matches.size();
       similarImageName = argvStrings[i];
     }
@@ -96,7 +96,7 @@ int main( int argc, char** argv ){
 
     
   }
-  if(bestMatchSize > 50){
+  if(bestMatchSize >= 50){
     isFoundSimilar = true;
   }
 

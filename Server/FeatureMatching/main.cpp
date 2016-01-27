@@ -88,7 +88,7 @@ int main( int argc, char** argv ){
         }
     }
 
-    if(bestMatchSize < good_matches.size()){
+    if(bestMatchSize <= good_matches.size()){
 
       img_2_final = img_2;
       keypoints_1_final = keypoints_1;
@@ -101,7 +101,7 @@ int main( int argc, char** argv ){
 
   }
 
-  if(bestMatchSize > 50){
+  if(bestMatchSize >= 50){
     isFoundSimilar = true;
     //-- Draw only "good" matches
     Mat img_matches;

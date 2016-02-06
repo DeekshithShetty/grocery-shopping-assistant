@@ -1,0 +1,1 @@
+/home/deekshith/Desktop/Grocery Assist v2/opencv/NFT_WebOCR/NFT/CMakeFiles/NFT.dir

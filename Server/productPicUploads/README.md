@@ -1,1 +1,0 @@
-Upload folder where final product pics are uploaded to user folders based on the userids

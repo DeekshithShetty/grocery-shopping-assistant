@@ -50,10 +50,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier
+CMAKE_SOURCE_DIR = /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier
+CMAKE_BINARY_DIR = /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne
 
 #=============================================================================
 # Target rules for target CMakeFiles/GroceryClassifier.dir
@@ -62,7 +62,7 @@ CMAKE_BINARY_DIR = /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Ser
 CMakeFiles/GroceryClassifier.dir/all:
 	$(MAKE) -f CMakeFiles/GroceryClassifier.dir/build.make CMakeFiles/GroceryClassifier.dir/depend
 	$(MAKE) -f CMakeFiles/GroceryClassifier.dir/build.make CMakeFiles/GroceryClassifier.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/CMakeFiles  1
 	@echo "Built target GroceryClassifier"
 .PHONY : CMakeFiles/GroceryClassifier.dir/all
 
@@ -72,9 +72,9 @@ all: CMakeFiles/GroceryClassifier.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/GroceryClassifier.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/GroceryClassifier.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/CMakeFiles 0
 .PHONY : CMakeFiles/GroceryClassifier.dir/rule
 
 # Convenience name for target.

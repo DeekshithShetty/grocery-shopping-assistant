@@ -1,4 +1,4 @@
-# Install script for directory: /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier
+# Install script for directory: /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

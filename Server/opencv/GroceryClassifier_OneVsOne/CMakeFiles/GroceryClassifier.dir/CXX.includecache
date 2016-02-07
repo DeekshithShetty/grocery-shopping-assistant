@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/main.cpp
+/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/main.cpp
 opencv2/core/core.hpp
-/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/opencv2/core/core.hpp
+/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/opencv2/core/core.hpp
 opencv2/opencv.hpp
-/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/opencv2/opencv.hpp
+/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/opencv2/opencv.hpp
 opencv2/highgui/highgui.hpp
-/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/opencv2/highgui/highgui.hpp
+/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/opencv2/highgui/highgui.hpp
 opencv2/features2d/features2d.hpp
-/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/opencv2/features2d/features2d.hpp
+/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/opencv2/features2d/features2d.hpp
 opencv2/xfeatures2d.hpp
-/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/opencv2/xfeatures2d.hpp
+/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/opencv2/xfeatures2d.hpp
 opencv2/imgproc.hpp
 -
 opencv2/highgui.hpp
@@ -30,7 +30,7 @@ opencv2/features2d.hpp
 opencv2/xfeatures2d.hpp
 -
 opencv2/ml.hpp
-/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/opencv2/ml.hpp
+/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/opencv2/ml.hpp
 map
 -
 omp.h

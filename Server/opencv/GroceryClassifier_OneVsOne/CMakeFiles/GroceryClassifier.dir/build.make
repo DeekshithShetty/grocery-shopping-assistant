@@ -38,10 +38,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier
+CMAKE_SOURCE_DIR = /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier
+CMAKE_BINARY_DIR = /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne
 
 # Include any dependencies generated for this target.
 include CMakeFiles/GroceryClassifier.dir/depend.make
@@ -54,17 +54,17 @@ include CMakeFiles/GroceryClassifier.dir/flags.make
 
 CMakeFiles/GroceryClassifier.dir/main.cpp.o: CMakeFiles/GroceryClassifier.dir/flags.make
 CMakeFiles/GroceryClassifier.dir/main.cpp.o: main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/GroceryClassifier.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/GroceryClassifier.dir/main.cpp.o -c /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/main.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/GroceryClassifier.dir/main.cpp.o -c /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/main.cpp
 
 CMakeFiles/GroceryClassifier.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GroceryClassifier.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/main.cpp > CMakeFiles/GroceryClassifier.dir/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/main.cpp > CMakeFiles/GroceryClassifier.dir/main.cpp.i
 
 CMakeFiles/GroceryClassifier.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GroceryClassifier.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/main.cpp -o CMakeFiles/GroceryClassifier.dir/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/main.cpp -o CMakeFiles/GroceryClassifier.dir/main.cpp.s
 
 CMakeFiles/GroceryClassifier.dir/main.cpp.o.requires:
 .PHONY : CMakeFiles/GroceryClassifier.dir/main.cpp.o.requires
@@ -157,6 +157,6 @@ CMakeFiles/GroceryClassifier.dir/clean:
 .PHONY : CMakeFiles/GroceryClassifier.dir/clean
 
 CMakeFiles/GroceryClassifier.dir/depend:
-	cd /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/CMakeFiles/GroceryClassifier.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne /home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/CMakeFiles/GroceryClassifier.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/GroceryClassifier.dir/depend
 

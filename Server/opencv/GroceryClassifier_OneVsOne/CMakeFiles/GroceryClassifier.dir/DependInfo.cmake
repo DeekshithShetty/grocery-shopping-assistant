@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/main.cpp" "/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier/CMakeFiles/GroceryClassifier.dir/main.cpp.o"
+  "/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/main.cpp" "/home/deekshith/Desktop/Github/Grocery-Shopping-Assistant/Server/opencv/GroceryClassifier_OneVsOne/CMakeFiles/GroceryClassifier.dir/main.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

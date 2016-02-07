@@ -1,0 +1,6 @@
+%YAML:1.0
+labels: !!opencv-matrix
+   rows: 11
+   cols: 1
+   dt: i
+   data: [ 0, 1, 3, 0, 1, 3, 0, 1, 3, 0, 1 ]

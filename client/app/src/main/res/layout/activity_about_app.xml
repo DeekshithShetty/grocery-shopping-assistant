@@ -1,0 +1,395 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.saiyanstudio.groceryassistant.AboutAppActivity">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/appbar"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+            <include layout="@layout/toolbar" />
+
+        </android.support.design.widget.AppBarLayout>
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/appbar">
+
+                <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/activity_vertical_margin"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:background="@color/screenBackground">
+
+                    <android.support.v7.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/app_logo_card"
+                        card_view:cardCornerRadius="4dp"
+                        android:background="#FFF">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:padding="15dp"
+                                android:background="@layout/card_border"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:src="@drawable/app_logo"
+                                    android:background="@color/cardBackground"/>
+
+                                <TextView android:text="@string/app_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="@color/textColorDark"
+                                    android:textSize="20sp"/>
+
+                                <TextView android:text="@string/app_version"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="@color/textColor"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"/>
+
+                                <TextView android:text="@string/app_dev_name"
+                                    android:textColor="@color/textColor"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"/>
+
+                            </LinearLayout>
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/contactBtn"
+                                android:background="@color/colorAccent"
+                                android:textColor="#EEE"
+                                android:text="Contact Us"/>
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/app_app_desc_card"
+                        card_view:cardCornerRadius="4dp"
+                        android:background="#FFF"
+                        android:layout_below="@+id/app_logo_card"
+                        android:layout_marginTop="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@color/cardBackground"
+                            android:padding="20dp">
+
+                            <TextView android:text="Description"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@color/textColorDark"
+                                android:textSize="20sp"/>
+
+                            <TextView android:text="@string/app_desc"
+                                android:padding="10dp"
+                                android:textColor="@color/textColor"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"/>
+
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/app_license_card"
+                        card_view:cardCornerRadius="4dp"
+                        android:background="#FFF"
+                        android:layout_below="@+id/app_app_desc_card"
+                        android:layout_marginTop="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@color/cardBackground"
+                            android:padding="20dp">
+
+                            <TextView android:text="Open Source Licenses"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@color/textColorDark"
+                                android:textSize="20sp"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:padding="10dp"
+                                android:orientation="vertical">
+
+                                <TextView android:text="Zebra Crossing"
+                                    android:layout_width="wrap_content"
+                                    android:textColor="@color/textColorDark"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="22sp"/>
+
+                                <TextView android:text="ZXing "
+                                    android:layout_marginTop="5dp"
+                                    android:textColor="@color/textColor"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp"/>
+
+                                <TextView android:text="Apache License, Version 2.0"
+                                    android:layout_marginTop="5dp"
+                                    android:textColor="@color/textColor"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14sp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:padding="10dp"
+                                android:orientation="vertical">
+
+                                <TextView android:text="Parse"
+                                    android:layout_width="wrap_content"
+                                    android:textColor="@color/textColorDark"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="22sp"/>
+
+                                <TextView android:text="Parse Platform "
+                                    android:layout_marginTop="5dp"
+                                    android:textColor="@color/textColor"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:padding="10dp"
+                                android:orientation="vertical">
+
+                                <TextView android:text="Retrofit"
+                                    android:layout_width="wrap_content"
+                                    android:textColor="@color/textColorDark"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="22sp"/>
+
+                                <TextView android:text="Square"
+                                    android:layout_marginTop="5dp"
+                                    android:textColor="@color/textColor"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp"/>
+
+                                <TextView android:text="Apache License, Version 2.0"
+                                    android:layout_marginTop="5dp"
+                                    android:textColor="@color/textColor"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14sp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:padding="10dp"
+                                android:orientation="vertical">
+
+                                <TextView android:text="Picasso"
+                                    android:layout_width="wrap_content"
+                                    android:textColor="@color/textColorDark"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="22sp"/>
+
+                                <TextView android:text="Square"
+                                    android:layout_marginTop="5dp"
+                                    android:textColor="@color/textColor"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp"/>
+
+                                <TextView android:text="Apache License, Version 2.0"
+                                    android:layout_marginTop="5dp"
+                                    android:textColor="@color/textColor"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14sp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:padding="10dp"
+                                android:orientation="vertical">
+
+                                <TextView android:text="MPAndroidChart"
+                                    android:layout_width="wrap_content"
+                                    android:textColor="@color/textColorDark"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="22sp"/>
+
+                                <TextView android:text="Phil Jay"
+                                    android:layout_marginTop="5dp"
+                                    android:textColor="@color/textColor"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp"/>
+
+                                <TextView android:text="Apache License, Version 2.1.0"
+                                    android:layout_marginTop="5dp"
+                                    android:textColor="@color/textColor"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14sp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:padding="10dp"
+                                android:orientation="vertical">
+
+                                <TextView android:text="CircleImageView"
+                                    android:layout_width="wrap_content"
+                                    android:textColor="@color/textColorDark"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="22sp"/>
+
+                                <TextView android:text="Henning Dodenhof"
+                                    android:layout_marginTop="5dp"
+                                    android:textColor="@color/textColor"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp"/>
+
+                                <TextView android:text="Apache License, Version 2.0"
+                                    android:layout_marginTop="5dp"
+                                    android:textColor="@color/textColor"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14sp"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/app_iconstheme_card"
+                        card_view:cardCornerRadius="4dp"
+                        android:background="#FFF"
+                        android:layout_below="@+id/app_license_card"
+                        android:layout_marginTop="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/cardBackground"
+                            android:orientation="vertical"
+                            android:padding="20dp">
+
+                            <TextView android:text="Icons"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@color/textColorDark"
+                                android:textSize="20sp"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:padding="10dp"
+                                android:orientation="vertical">
+
+                                <TextView android:text="iconfinder.com"
+                                    android:layout_width="wrap_content"
+                                    android:textColor="@color/textColor"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:orientation="vertical">
+
+                                <TextView android:text="icons8.com"
+                                    android:layout_width="wrap_content"
+                                    android:textColor="@color/textColor"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+            </ScrollView>
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.saiyanstudio.groceryassistant.GroceryListActivity">
+
+    <item android:id="@+id/action_add"
+        android:title="Add Item"
+        android:icon="@drawable/grocery_list_add"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/action_edit"
+        android:title="Edit List"
+        android:icon="@drawable/grocery_list_edit"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/action_clear"
+        android:title="Clear List"
+        android:icon="@drawable/grocery_list_clear"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+
+</menu>

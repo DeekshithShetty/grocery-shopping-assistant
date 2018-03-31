@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.saiyanstudio.groceryassistant">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".GroceryAssistantApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/app_logo"
+        android:label="@string/app_name"
+        android:theme="@style/MyAppTheme">
+        <activity
+            android:name=".SplashScreenActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginOrSignupActivity"
+            android:label="@string/app_name"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="LoginActivity"
+            android:theme="@style/MyAppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".SignUpActivity"
+            android:label="@string/title_activity_sign_up"
+            android:theme="@style/MyAppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme"></activity>
+        <activity
+            android:name=".BarcodeScannerActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_barcode_scanner"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".NutrientInfoActivity"
+            android:label="@string/title_activity_nutrient_info"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".UserProfileActivity"
+            android:label="@string/title_activity_user_profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".EditProfileActivity"
+            android:label="@string/title_activity_edit_profile"></activity>
+        <activity
+            android:name=".AboutAppActivity"
+            android:label="@string/title_activity_about_app"></activity>
+        <activity
+            android:name=".SearchFoodsActivity"
+            android:label="@string/title_activity_search_foods"></activity>
+        <activity
+            android:name=".GroceryListActivity"
+            android:label="@string/title_activity_grocery_list"></activity>
+        <activity
+            android:name=".RecipeActivity"
+            android:label="@string/title_activity_recipe"></activity>
+        <activity
+            android:name=".FoodTrackingActivity"
+            android:label="@string/title_activity_food_tracking"></activity>
+        <activity android:name=".SettingsActivity"></activity>
+    </application>
+
+</manifest>

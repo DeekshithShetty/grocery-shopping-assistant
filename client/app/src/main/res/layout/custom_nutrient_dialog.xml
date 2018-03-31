@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/cardBackground"
+    android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:id="@+id/foodPic"
+                android:src="@drawable/apple" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/foodPic">
+
+                <EditText
+                    android:id="@+id/productNameText"
+                    android:text="Kellogs Corn Flakes"
+                    android:textSize="19dp"
+                    android:textColor="@color/primaryColorDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/productBarcodeText"
+                    android:text="898788765678"
+                    android:textSize="17dp"
+                    android:textColor="@color/textColor"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:text="Calories (kcal)"
+                    android:textSize="19dp"
+                    android:textColor="@color/textColor"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/calorieText"
+                    android:text="787"
+                    android:textColor="@color/primaryColorDark"
+                    android:textSize="17dp"
+                    android:layout_width="80dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:text="Nutrient Information"
+                android:textSize="19dp"
+                android:textColor="@color/textColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="5dp"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Carbohydrate (g)"
+                        android:textSize="17dp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/carboText"
+                        android:text="190"
+                        android:textColor="@color/primaryColorDark"
+                        android:textSize="17dp"
+                        android:layout_width="60dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="wrap_content" />
+
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Sugars (g)"
+                        android:textSize="17dp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/sugarText"
+                        android:text="98"
+                        android:textSize="17dp"
+                        android:textColor="@color/primaryColorDark"
+                        android:layout_width="60dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:text="Protein (g)"
+                        android:textSize="17dp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/proteinText"
+                        android:text="156"
+                        android:textColor="@color/primaryColorDark"
+                        android:textSize="17dp"
+                        android:layout_width="60dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="wrap_content"/>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Total Fat (g)"
+                        android:textSize="17dp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/totFatText"
+                        android:text="6.0"
+                        android:textColor="@color/primaryColorDark"
+                        android:textSize="17dp"
+                        android:layout_width="60dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="wrap_content"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+                <Button
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/saveInfoBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:textColor="#EEE"
+                    android:clickable="true"
+                    android:text="Save" />
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+</LinearLayout>

@@ -1,1 +1,0 @@
-/home/deekshith/Desktop/Grocery Assist v2/Backups/Text Extraction From Table/CMakeFiles/TextExtraction.dir

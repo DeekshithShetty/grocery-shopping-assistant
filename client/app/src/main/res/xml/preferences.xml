@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Current Server Settings">
+
+        <EditTextPreference
+            android:title="IP Address"
+            android:key="ip_address"
+            android:defaultValue="192.168.2.4"
+            android:summary="192.168.2.4">
+
+        </EditTextPreference>
+
+        <EditTextPreference
+            android:title="Server Port"
+            android:key="port"
+            android:defaultValue="8080"
+            android:summary="8080">
+
+        </EditTextPreference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Default Server IP and Port">
+
+        <Preference
+            android:title="IP Address"
+            android:summary="192.168.2.4">
+        </Preference>
+
+        <Preference
+            android:title="Server Port"
+            android:summary="8080">
+        </Preference>
+
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>

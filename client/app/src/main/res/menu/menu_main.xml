@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.saiyanstudio.groceryassistant.MainActivity">
+
+    <item
+        android:id="@+id/action_search"
+        android:title="@string/action_search"
+        android:orderInCategory="100"
+        android:icon="@drawable/search_icon"
+        app:showAsAction="always"
+        app:actionViewClass="android.support.v7.widget.SearchView"/>
+
+
+    <item android:id="@+id/logout_button" android:title="Logout"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+    <item android:id="@+id/settings_button" android:title="Settings"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+</menu>

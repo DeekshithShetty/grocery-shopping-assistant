@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="theme_green">#00AB66</color>
+    <color name="theme_green_dark">#009150</color>
+    <color name="theme_grey">#809dAb</color>
+    <color name="theme_grey_dark">#405A69</color>
+
+    <color name="primaryColor">#00AB66</color>
+    <color name="primaryColorDark">#009150</color>
+    <color name="primaryColorLight">#22CC88</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#607D8B</color>
+
+    <color name="textColor">#777</color>
+    <color name="textColorDark">#555</color>
+    <color name="cardBackground">#FFF</color>
+    <color name="screenBackground">#EEE</color>
+    <color name="navigationDrawerBackground">#EEE</color>
+    <color name="lightText">#EEE</color>
+
+    <color name="colorTransparent">#F2000000</color>
+    <color name="primaryColorDarkTransparent">#CC009150</color>
+    <color name="colorHighlight">#B6B6B6</color>
+
+
+    <color name="light_grey">#C6C6C6</color>
+    <color name="dark_grey">#393939</color>
+
+</resources>

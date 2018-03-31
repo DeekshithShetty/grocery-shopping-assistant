@@ -1,0 +1,178 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.saiyanstudio.groceryassistant.EditProfileActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/appbar"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+            <include layout="@layout/toolbar" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/appbar"
+            android:id="@+id/linearLayout_editProfile"
+            android:background="@color/screenBackground"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="4dp"
+                android:layout_marginTop="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/cardBackground"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/heightValueET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="173"
+                        android:paddingLeft="0dp"
+                        android:textColor="@color/primaryColorDark"
+                        android:textSize="20sp" />
+
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Height (cm)"
+                        android:textSize="17sp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="4dp"
+                android:layout_marginTop="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/cardBackground"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/weightValueET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="60"
+                        android:paddingLeft="0dp"
+                        android:textColor="@color/primaryColorDark"
+                        android:textSize="20sp" />
+
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Weight (kg)"
+                        android:textSize="17sp"/>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="4dp"
+                android:layout_marginTop="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/cardBackground"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/ageValueET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="20"
+                        android:paddingLeft="0dp"
+                        android:textColor="@color/primaryColorDark"
+                        android:textSize="20sp" />
+
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Age"
+                        android:textSize="17sp"/>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="4dp"
+                android:layout_marginTop="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/cardBackground"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/activityLvlValueSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="0dp"
+                        android:textColor="@color/primaryColorDark"
+                        android:textSize="20sp" />
+
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Activity Level"
+                        android:textSize="17sp"/>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

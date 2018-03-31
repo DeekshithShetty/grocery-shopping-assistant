@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single" android:id="@+id/group1">
+
+        <item
+            android:id="@+id/home"
+            android:checked="true"
+            android:icon="@drawable/home_icon"
+            android:textColor="@color/textColor"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/userProfile"
+            android:checked="false"
+            android:checkable="false"
+            android:icon="@drawable/user_profile"
+            android:title="User Profile" />
+
+        <item
+            android:id="@+id/groceryList"
+            android:checked="false"
+            android:checkable="false"
+            android:icon="@drawable/grocery_bag_icon"
+            android:title="Grocery List" />
+
+        <item
+            android:id="@+id/foodTracking"
+            android:checked="false"
+            android:checkable="false"
+            android:icon="@drawable/calendar_icon_48"
+            android:title="Food Tracking" />
+
+    </group>
+
+    <group android:checkableBehavior="none" android:id="@+id/group2">
+
+        <item
+            android:id="@+id/rateTheApp"
+            android:checked="false"
+            android:checkable="false"
+            android:icon="@drawable/rate_me"
+            android:title="Rate the app" />
+
+        <item
+            android:id="@+id/contactUs"
+            android:checked="false"
+            android:checkable="false"
+            android:icon="@drawable/contact_us"
+            android:title="Contact Us" />
+
+        <item
+            android:id="@+id/about"
+            android:checked="false"
+            android:checkable="false"
+            android:icon="@drawable/about"
+            android:title="About" />
+
+    </group>
+
+    <group android:checkableBehavior="none" android:id="@+id/group3">
+
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/logout_icon"
+            android:title="Logout" />
+    </group>
+
+</menu>

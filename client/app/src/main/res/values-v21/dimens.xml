@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="toolbar_paddingTop">0dp</dimen>
+    <dimen name="nav_drawer_header_marginTop">48dp</dimen>
+</resources>

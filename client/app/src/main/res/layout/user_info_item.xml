@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@layout/card_border"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/infoValueTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="173cm"
+        android:textColor="@color/primaryColorDark"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/infoKeyTV"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Height"
+        android:textColor="@color/textColor"
+        android:textSize="15sp"/>
+
+</LinearLayout>
